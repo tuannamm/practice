@@ -1,0 +1,111 @@
+/* [
+    {
+        employeeCode: '',
+        employeeName: '',
+        employee: {
+          ...
+        },
+    },
+    {}
+   ]
+*/
+
+const values = [
+  {
+    stt: "1",
+    employeeCode: "07",
+    employeeName: "Nam",
+    baseSalary: 10000,
+    lunchAllowanceFreeInsurance: 1,
+    phoneAllowanceFreeInsurance: 2,
+    gasAllowanceFreeInsurance: 3,
+    rentalHouseAllowanceFreeInsurance: 4,
+    revenueAllowanceFreeInsurance: 5,
+    childrenAllowanceFreeInsurance: 6,
+    totalAllowanceFreeInsurance: 21,
+    responsibilityAllowance: 7,
+    anotherAllowance: 8,
+    extraSalaryAllowance: 9,
+    totalAllowance: 24,
+    totalIncome: 10045,
+    workingDay: 26,
+    totalRealIncome: 0,
+    insurance: 10015,
+    insuranceCompanyTP: 0,
+    insuranceCompanySI: 1753,
+    insuranceCompanyMI: 300,
+    insuranceCompanyUI: 100,
+    insuranceCompanyTotal: 2153,
+    insuranceEmployeeTP: 0,
+    insuranceEmployeeSI: 801,
+    insuranceEmployeeMI: 150,
+    insuranceEmployeeUI: 100,
+    insuranceEmployeeTotal: 1051,
+    lunchFreeTax: 10,
+    phoneFreeTax: 11,
+    rentalHouseFreeTax: 12,
+    anotherFreeTax: 13,
+    totalFreeTax: 46,
+    taxIncome: 9999,
+    reducePersonal: 11000000,
+    reduceDependents: 0,
+    taxableIncome: 0,
+    taxPersonal: 0,
+    prePaid: 0,
+    salary: 8994,
+  },
+  {
+    stt: "2",
+    employeeCode: "ddddd",
+    employeeName: "Nom",
+    baseSalary: 100000000,
+    lunchAllowanceFreeInsurance: 1,
+    phoneAllowanceFreeInsurance: 2,
+    gasAllowanceFreeInsurance: 3,
+    rentalHouseAllowanceFreeInsurance: 4,
+    revenueAllowanceFreeInsurance: 5,
+    childrenAllowanceFreeInsurance: 6,
+    totalAllowanceFreeInsurance: 21,
+    responsibilityAllowance: 7,
+    anotherAllowance: 8,
+    extraSalaryAllowance: 9,
+    totalAllowance: 24,
+    totalIncome: 100000045,
+    workingDay: 26,
+    totalRealIncome: 0,
+    insurance: 100000015,
+    insuranceCompanyTP: 0,
+    insuranceCompanySI: 17500003,
+    insuranceCompanyMI: 3000000,
+    insuranceCompanyUI: 1000000,
+    insuranceCompanyTotal: 21500003,
+    insuranceEmployeeTP: 0,
+    insuranceEmployeeSI: 8000001,
+    insuranceEmployeeMI: 1500000,
+    insuranceEmployeeUI: 1000000,
+    insuranceEmployeeTotal: 10500001,
+    lunchFreeTax: 10,
+    phoneFreeTax: 11,
+    rentalHouseFreeTax: 12,
+    anotherFreeTax: 13,
+    totalFreeTax: 46,
+    taxIncome: 99999999,
+    reducePersonal: 11000000,
+    reduceDependents: 0,
+    taxableIncome: 78500041,
+    taxPersonal: 17700012,
+    prePaid: 0,
+    salary: 71800032,
+  },
+];
+
+let result = values.map((elm) => {
+  return {
+    ...elm,
+    employee: employeeSalaryList.find(
+      (employee) => employee.employee?.code === elm.employeeCode
+    )?.employee,
+  };
+});
+
+console.log(result);
