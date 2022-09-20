@@ -1,26 +1,25 @@
-/* 
-There are two arrays with individual values, write a JavaScript program to compute the sum of each individual index value from the given arrays. Go to the editor
-Sample array :
-array1 = [1,0,2,3,4];
-array2 = [3,5,6,7,8,13];
-Expected Output :
-[4, 5, 8, 10, 12, 13]
+/*
+  Write a JavaScript program to sort the items of an array. Go to the editor
+  Sample array : var arr1 = [ 3, 8, 7, 6, 5, -4, 3, 2, 1 ];
+  Sample Output : -4,-3,1,2,3,5,6,7,8
 */
 
-function sumArray(array1, array2) {
-  if (!Array.isArray(array1) && !Array.isArray(array2)) {
-    return "Please input two arrays";
+function sortArray(arr) {
+  if (!Array.isArray(arr)) return false;
+
+  let newArr = [];
+  let arrLength = arr.length;
+
+  for (let i = 0; i < arr.length; i++) {
+    let min = arr[i];
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[i]) {
+        newArr.push(arr[j]);
+      }
+    }
   }
 
-  let newArray = [];
-  let maxLength = Math.max(array1.length, array2.length);
-
-  for (let i = 0; i < maxLength; i++) {
-    let sum = (array1[i] || 0) + (array2[i] || 0);
-    newArray.push(sum);
-  }
-
-  return newArray;
+  return newArr;
 }
 
-console.log(sumArray([1, 0, 2, 3, 4], [3, 5, 6, 7, 8, 13]));
+console.log(sortArray([3, 8, 7, 6, 5, -4, 3, 2, 1]));
