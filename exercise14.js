@@ -7,19 +7,20 @@
 function sortArray(arr) {
   if (!Array.isArray(arr)) return false;
 
-  let newArr = [];
   let arrLength = arr.length;
+  let flag;
 
   for (let i = 0; i < arr.length; i++) {
-    let min = arr[i];
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[j] < arr[i]) {
-        newArr.push(arr[j]);
+        flag = arr[i];
+        arr[i] = arr[j];
+        arr[j] = flag;
       }
     }
   }
 
-  return newArr;
+  return arr;
 }
 
 console.log(sortArray([3, 8, 7, 6, 5, -4, 3, 2, 1]));
