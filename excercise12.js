@@ -2,8 +2,9 @@
 For example if you accept 025468 the output should be 0-254-6-8. Go to the editor */
 
 function insertDash(num) {
-  let newString = num.toString();
+  if (typeof num !== "number") return false;
 
+  let newString = num.toString();
   let stringLength = newString.length;
 
   for (let i = 0; i < stringLength; i++) {
@@ -11,6 +12,8 @@ function insertDash(num) {
       newString = newString.slice(0, i + 1) + "-" + newString.slice(i + 1);
     }
   }
+
+  return newString;
 }
 
 console.log(insertDash(25468));

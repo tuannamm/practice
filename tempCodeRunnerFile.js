@@ -1,20 +1,19 @@
-/* 
-There are two arrays with individual values, write a JavaScript program to compute the sum of each individual index value from the given arrays. Go to the editor
-Sample array :
-array1 = [1,0,2,3,4];
-array2 = [3,5,6,7,8,13];
-Expected Output :
-[4, 5, 8, 10, 12, 13]
-*/
+/*  Write a JavaScript program which accept a number as input and insert dashes (-) between each two even numbers. 
+For example if you accept 025468 the output should be 0-254-6-8. Go to the editor */
 
-function sumArray(array1, array2) {
-  let result = [];
-  let maxLength = Math.max(array1.length, array2.length);
-  for (let i = 0; i < maxLength; i++) {
-    let sum = (array1[i] || 0) + (array2[i] || 0);
-    result.push(sum);
+function insertDash(num) {
+  if (typeof num !== "number") return false;
+
+  let newString = num.toString();
+  let stringLength = newString.length;
+
+  for (let i = 0; i < stringLength; i++) {
+    if (newString[i] % 2 === 0 && newString[i + 1] % 2 === 0) {
+      newString = newString.slice(0, i + 1) + "-" + newString.slice(i + 1);
+    }
   }
-  return result;
+
+  return newString;
 }
 
-console.log(sumArray([1, 0, 2, 3, 4], [3, 5, 6, 7, 8, 13]));
+console.log(insertDash(25468));
