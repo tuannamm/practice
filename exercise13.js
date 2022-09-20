@@ -8,13 +8,19 @@ Expected Output :
 */
 
 function sumArray(array1, array2) {
-  let result = [];
+  if (!Array.isArray(array1) && !Array.isArray(array2)) {
+    return "Please input two arrays";
+  }
+
+  let newArray = [];
   let maxLength = Math.max(array1.length, array2.length);
+
   for (let i = 0; i < maxLength; i++) {
     let sum = (array1[i] || 0) + (array2[i] || 0);
-    result.push(sum);
+    newArray.push(sum);
   }
-  return result;
+
+  return newArray;
 }
 
 console.log(sumArray([1, 0, 2, 3, 4], [3, 5, 6, 7, 8, 13]));
