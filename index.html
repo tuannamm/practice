@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+    <button onclick="handleChange()">Click me</button>
+</body>
+
+<script>
+
+  const handleChange = () => {
+  
+    let timeOut;
+
+    return () => {
+      if (timeOut) clearTimeout(timeOut);
+
+      timeOut = setTimeout(console.log("xxxx"), 500 );
+    }
+  }
+
+</script>
+</html>
