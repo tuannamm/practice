@@ -6,7 +6,4 @@
 
 const findMostFrequentItem = (arr) => {
   if (!Array.isArray(arr)) return false;
-
-  
-
 };
